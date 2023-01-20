@@ -2,7 +2,7 @@ const { Conflict } = require("http-errors");
 const { User } = require("../../models");
 const gravatar = require("gravatar");
 
-const signup = async (req, res) => {
+const register = async (req, res) => {
   const { email, password, subscription } = req.body;
   const user = await User.findOne({ email });
   const avatarURL = gravatar.url(email);
@@ -28,4 +28,4 @@ const signup = async (req, res) => {
   });
 };
 
-module.exports = signup;
+module.exports = register;

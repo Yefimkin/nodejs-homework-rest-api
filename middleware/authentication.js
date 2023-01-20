@@ -1,7 +1,7 @@
 const { User } = require("../models");
 const { Unauthorized } = require("http-errors");
 const jwt = require("jsonwebtoken");
-const { SECRET_KEY } = require("../config.js");
+const { SECRET_KEY } = require("../token");
 
 const auth = async (req, res, next) => {
   const { authorization = "" } = req.headers;
