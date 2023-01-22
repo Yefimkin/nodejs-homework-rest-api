@@ -35,9 +35,16 @@ router.post(
   ctrlWrapper(addNewContact)
 );
 
-router.put("/:id", contactUpdateValidation, ctrlWrapper(updateContact));
+router.put(
+  "/:id",
+  authentication,
+  contactUpdateValidation,
+  ctrlWrapper(updateContact)
+);
+
 router.patch(
   "/:id/favorite",
+  authentication,
   contactFavoriteValidation,
   ctrlWrapper(updateFavorite)
 );
