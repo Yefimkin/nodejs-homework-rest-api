@@ -8,6 +8,7 @@ const {
   signupUserSchema,
   loginUserSchema,
   updateUserSchema,
+  verifyEmailSchema,
 } = require("./user");
 
 module.exports = {
@@ -17,4 +18,7 @@ module.exports = {
   signupUserSchema,
   loginUserSchema,
   updateUserSchema,
+  // eslint-disable-next-line no-dupe-keys
+  updateUserSchema,
+  verifyEmailSchema,
 };
