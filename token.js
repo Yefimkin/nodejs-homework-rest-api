@@ -4,5 +4,5 @@ dotenv.config();
 module.exports = {
   DB_HOST: process.env.DB_HOST,
   SECRET_KEY: process.env.SECRET_KEY,
-  SENDGRIPAPIKEY: process.env.SENDGRIPAPIKEY,
+  SEND_GRIP_API_KEY: process.env.SEND_GRIP_API_KEY,
 };
