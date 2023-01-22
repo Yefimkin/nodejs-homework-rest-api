@@ -1,6 +1,6 @@
 const { User } = require("../../models");
 const { sendEmail } = require("../../helpers");
-const { BadRequest, NotFound } = require("http-errors");
+const { BadRequest } = require("http-errors");
 const { verificationMail } = require("../../servises");
 
 const sendVerifyEmail = async (req, res) => {
