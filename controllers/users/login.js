@@ -4,8 +4,12 @@ const jwt = require("jsonwebtoken");
 const { SECRET_KEY } = require("../../token");
 
 const login = async (req, res) => {
-  const { email, password, subscription } = req.body;
+  const { email, password } = req.body;
   const user = await User.findOne({ email });
+  if (!user.verify) {
+    throw new Unauthorized(" Email is not verified");
+  }
+
   if (!user || !user.comparePassword(password)) {
     throw new Unauthorized("Email or password is wrong");
   }
@@ -23,7 +27,6 @@ const login = async (req, res) => {
       token,
       user: {
         email,
-        subscription,
       },
     },
   });
